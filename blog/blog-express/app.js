@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 var Datastore = require("nedb");
 const { v4: uuidv4 } = require("uuid");
 
@@ -9,6 +10,7 @@ bodyParser = require("body-parser");
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 db = {};
 db.posts = new Datastore({ filename: __dirname + "/posts.db" });
@@ -23,7 +25,7 @@ app.post("/post", (req, res) => {
   const { title, content } = req.body;
   db.posts.insert({ title, content }, (err, result) => {
     if (err) res.status(500).send(err);
-    res.status(200).json({ inserted: result });
+    res.status(200).json({ message: "Number of posts created: 1" });
   });
 });
 
@@ -99,10 +101,10 @@ app.delete("/post/:id", (req, res) => {
 app.get("/posts", (req, res) => {
   db.posts.find({}, (err, result) => {
     if (err) res.status(500).send(err);
-    res.send(result);
+    res.status(200).send(result);
   });
 });
 
-app.listen(3000, () => {
-  console.log("Listen on port 3000");
+app.listen(4000, () => {
+  console.log("Listen on port 4000");
 });
