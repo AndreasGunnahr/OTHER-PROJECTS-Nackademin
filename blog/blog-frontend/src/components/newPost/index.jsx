@@ -18,7 +18,7 @@ const NewPost = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:4000/post", {
+    fetch("http://localhost:4000/posts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, content }),

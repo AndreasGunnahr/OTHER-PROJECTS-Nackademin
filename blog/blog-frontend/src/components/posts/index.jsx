@@ -23,7 +23,7 @@ const Posts = () => {
 
   const deletePost = (id) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
-      fetch(`http://localhost:4000/post/${id}`, {
+      fetch(`http://localhost:4000/posts/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())

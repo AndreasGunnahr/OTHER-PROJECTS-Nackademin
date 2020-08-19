@@ -15,7 +15,7 @@ const Popup = ({ show, setShow, post, updatePost }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch(`http://localhost:4000/post/${post._id}`, {
+    fetch(`http://localhost:4000/posts/${post._id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, content }),
