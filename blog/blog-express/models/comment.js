@@ -1,7 +1,7 @@
 const db = require("../database");
 const { v4: uuidv4 } = require("uuid");
 
-const findAllComments = (id) => {
+const findAllCommentsByPostId = (id) => {
   return db.comments.find({ postId: id });
 };
 
@@ -29,11 +29,11 @@ const updateComment = (commentId, message) => {
 };
 
 const deleteComment = async (id) => {
-  return db.comments.remove({ _id: id }, {});
+  return db.comments.remove({ _id: id });
 };
 
 module.exports = {
-  findAllComments,
+  findAllCommentsByPostId,
   createComment,
   updateComment,
   deleteComment,

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +15,7 @@
     "express": "^4.17.1",
     "nedb": "^1.8.0",
     "nedb-promise": "^2.0.1",
+    "nodemon": "^2.0.4",
     "uuid": "^8.3.0"
   }
 }

@@ -2,24 +2,23 @@ const express = require("express");
 const router = express.Router();
 
 const Post = require("../controllers/post");
-const Comment = require("../controllers/comment");
 
 // GET ALL EXISTING POSTS
-router.get("/", Post.FindAll);
+router.get("/", Post.findAll);
 
 // CREATE A NEW POST
-router.post("/", Post.Create);
+router.post("/", Post.create);
 
 // UPDATE EXISTING POST WITH TITLE AND CONTENT
-router.put("/:id", Post.Update);
+router.put("/:id", Post.update);
 
 // DELETE EXISTING POST
-router.delete("/:id", Post.Delete);
+router.delete("/:id", Post.remove);
 
 // GET ALL EXISTING COMMENTS TO EXISTING POST
-router.get("/:id/comment", Comment.FindAll);
+router.get("/:id/comments", Post.findAllComments);
 
 // CREATE A NEW COMMENT TO A SPECIFIC POST
-router.post("/:id/comment", Comment.Create);
+router.post("/:id/comments", Post.createNewComment);
 
 module.exports = router;

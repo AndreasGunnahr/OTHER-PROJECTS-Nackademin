@@ -9,11 +9,11 @@ const createPost = (title, content) => {
 };
 
 const updatePost = (postId, title, content) => {
-  return db.posts.update({ _id: postId }, { title, content }, {});
+  return db.posts.update({ _id: postId }, { title, content });
 };
 
 const deletePost = async (id) => {
-  return db.posts.remove({ _id: id }, {});
+  return db.posts.remove({ _id: id });
 };
 
 module.exports = {
