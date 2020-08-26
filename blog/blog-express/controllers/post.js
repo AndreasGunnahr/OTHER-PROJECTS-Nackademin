@@ -19,8 +19,9 @@ const findAll = async (req, res) => {
 
 const create = async (req, res) => {
   const { title, content } = req.body;
+  const { id } = req.user;
   try {
-    const post = await createPost(title, content);
+    const post = await createPost(id, title, content);
     res.status(200).json({ message: "Number of posts created: 1" });
   } catch (e) {
     console.log(e);
@@ -66,9 +67,10 @@ const findAllComments = async (req, res) => {
 
 const createNewComment = async (req, res) => {
   const postId = req.params.id;
-  const { user, message } = req.body;
+  const { id } = req.user;
+  const { message } = req.body;
   try {
-    const comment = await createComment(user, message, postId);
+    const comment = await createComment(id, message, postId);
     res.status(200).json({ message: "Number of comments created: 1" });
   } catch (e) {
     console.log(e);

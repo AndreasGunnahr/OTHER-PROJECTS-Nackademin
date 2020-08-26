@@ -5,10 +5,10 @@ const findAllCommentsByPostId = (id) => {
   return db.comments.find({ postId: id });
 };
 
-const createComment = (user, message, postId) => {
+const createComment = (userId, message, postId) => {
   return db.comments.insert({
     _id: uuidv4(),
-    user,
+    userId,
     message,
     timestamp: new Date().toLocaleString(),
     postId,

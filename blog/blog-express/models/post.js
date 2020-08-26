@@ -4,8 +4,8 @@ const findAllPosts = () => {
   return db.posts.find({});
 };
 
-const createPost = (title, content) => {
-  return db.posts.insert({ title, content });
+const createPost = (userId, title, content) => {
+  return db.posts.insert({ userId, title, content });
 };
 
 const updatePost = (postId, title, content) => {
