@@ -28,8 +28,22 @@ const updateComment = (commentId, message) => {
   );
 };
 
+const countComments = () => {
+  return db.comments.count({});
+};
+
+const owner = async (id) => {
+  const { userId } = await findOne({ _id: id });
+  const { username } = await findOne({ _id: userId });
+  return username;
+};
+
 const deleteComment = async (id) => {
   return db.comments.remove({ _id: id });
+};
+
+const clear = () => {
+  return db.comments.remove({}, { multi: true });
 };
 
 module.exports = {
@@ -37,4 +51,7 @@ module.exports = {
   createComment,
   updateComment,
   deleteComment,
+  countComments,
+  owner,
+  clear,
 };

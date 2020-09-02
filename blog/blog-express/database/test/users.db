@@ -1,0 +1,9 @@
+{"username":"Patrik","password":"$2a$10$HDYt6w4rZJlXNRaPq7NNSu3XjECLAtvjUV8LKJjjIbeyORVibUIhm","role":"slave","_id":"OBVvRMwImm3M3Stk"}
+{"username":"andreas","password":"$2a$10$gtwoIeE5yof/ynOLNsyIveqg8rkYy3T10y3od6FbrqicHml9tUM2.","role":"admin","_id":"Z05RVKo72WEnTKnK"}
+{"username":"Kevin","password":"$2a$10$0TqKPPv72KMXW7ud0N3smOe8njEhbIfHWZ9vNt74KByw0MBkTjF3a","role":"user","_id":"v7S1vq1v2UjFwyv7"}
+{"$$deleted":true,"_id":"OBVvRMwImm3M3Stk"}
+{"$$deleted":true,"_id":"Z05RVKo72WEnTKnK"}
+{"$$deleted":true,"_id":"v7S1vq1v2UjFwyv7"}
+{"username":"andreas","password":"$2a$10$GDdKwkPjmxm8PG2w45CkB.7/wgLk2a0BEEoFctAKm/Tiyjsr44n66","role":"admin","_id":"sLwuKkzXEvhl3yLO"}
+{"username":"Patrik","password":"$2a$10$rzSgJhnQHX1grRimFi6L1e1BZyLrQHncaFdaNCbhd2uX1rgYl.mXm","role":"slave","_id":"63BLTSdjRHzfxuKZ"}
+{"username":"Kevin","password":"$2a$10$2Sra.uJaE1TOLHluIckIg./D0KszKLiST2F8cMfGJjw/P3YvQO3mq","role":"user","_id":"k7HKN675rMfIvIg2"}

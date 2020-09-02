@@ -10,6 +10,10 @@ const findByUsername = (username) => {
   return db.users.findOne({ username: username });
 };
 
+const countUsers = () => {
+  return db.users.count({});
+};
+
 const createUser = (username, password, role) => {
   const hashedPassword = bcrypt.hashSync(password, 10);
   return db.users.insert({ username, password: hashedPassword, role });
@@ -33,6 +37,10 @@ const generateToken = (id, username, role) => {
   });
 };
 
+const clear = () => {
+  return db.users.remove({}, { multi: true });
+};
+
 module.exports = {
   findUserById,
   createUser,
@@ -41,4 +49,6 @@ module.exports = {
   checkPassword,
   findByUsername,
   generateToken,
+  countUsers,
+  clear,
 };
