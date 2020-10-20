@@ -16,4 +16,12 @@ describe("Users", () => {
     numberOfUsers.should.be.a("number");
     numberOfUsers.should.equal(3);
   });
+
+  it("Should count how many users we have in our database", async () => {
+    await User.createUser("andreas", "gunnahr", "admin");
+
+    const numberOfUsers = await User.countUsers();
+    numberOfUsers.should.be.a("number");
+    numberOfUsers.should.equal(3);
+  });
 });
