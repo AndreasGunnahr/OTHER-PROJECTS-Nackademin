@@ -7,6 +7,7 @@ import {
   MarketsPage,
   DetailPage,
   MarketPage,
+  HomePage,
 } from "pages";
 import { Navbar } from "components";
 import { StockProvider } from "providers";
@@ -21,6 +22,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <GlobalStyle />
           <Navbar />
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/crypto" component={CryptoPage} />
           <Route exact path="/crypto/:name" component={DetailPage} />
           <Route exact path="/currencies" component={CurrenciesPage} />

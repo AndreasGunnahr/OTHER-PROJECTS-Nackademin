@@ -4,6 +4,7 @@ import IndexesPage from "./indexesPage";
 import MarketsPage from "./marketsPage";
 import MarketPage from "./marketPage";
 import DetailPage from "./detailPage";
+import HomePage from "./homePage";
 
 export {
   CryptoPage,
@@ -12,4 +13,5 @@ export {
   MarketsPage,
   MarketPage,
   DetailPage,
+  HomePage,
 };
