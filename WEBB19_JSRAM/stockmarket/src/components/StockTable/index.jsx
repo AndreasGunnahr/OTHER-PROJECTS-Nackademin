@@ -4,6 +4,7 @@ import { Table, Body, Row, Header, Data } from "./style";
 
 const CryptoTable = ({ data, properties, name, url }) => {
   const history = useHistory();
+
   const handleRowClick = (id) => {
     if (name === "market") {
       history.push(`/markets/${url}/${id}`);
