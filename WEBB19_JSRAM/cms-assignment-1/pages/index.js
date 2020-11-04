@@ -1,5 +1,10 @@
-import Head from "next/head";
+import PrimaryLayout from "layouts/PrimaryLayout";
+import Hero from "components/Hero";
 
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <PrimaryLayout>
+      <Hero />
+    </PrimaryLayout>
+  );
 }
