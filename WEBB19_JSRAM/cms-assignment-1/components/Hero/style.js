@@ -3,26 +3,22 @@ import { H1, P, A } from "components/Shared";
 import { OrangeButton } from "components/Button";
 
 export const HeroSection = styled.div`
-  height: calc(100vh - 58px);
+  height: 100%;
   max-width: 1900px;
   margin: 0 auto;
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0 5%;
-  @media (min-width: 1024px) {
-    height: calc(100vh - 70px);
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
 `;
 
 export const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: -100px;
   @media (min-width: 1024px) {
     margin-top: -200px;
-    padding-right: 2rem;
   }
 `;
 
@@ -50,13 +46,7 @@ export const HeroActionBtn = styled(OrangeButton)`
   }
 `;
 
-export const HeroTitle = styled(H1)`
-  margin-top: 2rem;
-  @media (min-width: 1024px) {
-    margin: 0;
-    font-size: 3rem;
-  }
-`;
+export const HeroTitle = styled(H1)``;
 
 export const NextSectionBtn = styled(A)`
   text-transform: uppercase;

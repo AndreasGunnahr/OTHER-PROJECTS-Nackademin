@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import Navbar from "components/Navbar";
-import { MainWrapper } from "./style";
+import { MainWrapper, ChildrenWrapper } from "./style";
 
 const PrimaryLayout = ({ children }) => {
   return (
@@ -10,7 +10,7 @@ const PrimaryLayout = ({ children }) => {
         <title>Magic CMS ⭐ </title>
       </Head>
       <Navbar />
-      {children}
+      <ChildrenWrapper>{children}</ChildrenWrapper>
     </MainWrapper>
   );
 };

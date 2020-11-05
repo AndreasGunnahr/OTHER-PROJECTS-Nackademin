@@ -9,14 +9,32 @@ export const textFont = css`
   font-family: "Raleway", sans-serif;
 `;
 
-export const Input = styled.input``;
-export const TextArea = styled.input``;
-export const Label = styled.input``;
+export const Input = styled.input`
+  ${textFont};
+  color: ${theme.color.black};
+  height: 50px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.85rem;
+`;
+
+export const Label = styled.label`
+  ${headerFont};
+  color: ${theme.color.black};
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+  font-size: 1.25rem;
+`;
 
 export const H1 = styled.h1`
   ${headerFont};
   color: ${theme.color.black};
   text-transform: uppercase;
+  font-size: 2rem;
+  @media (min-width: 1024px) {
+    font-size: 3rem;
+  }
 `;
 
 export const H2 = styled.input``;

@@ -16,7 +16,7 @@ const Hero = () => {
           Communication inside teams is more important than ever. We can help
           with scalable team workflows for the whole organisation.
         </HeroDescription>
-        <HeroActionBtn href="/register">Create your account now</HeroActionBtn>
+        <HeroActionBtn href="/register">Sign up today</HeroActionBtn>
       </HeroContainer>
       <NextSectionBtn>Read More</NextSectionBtn>
     </HeroSection>

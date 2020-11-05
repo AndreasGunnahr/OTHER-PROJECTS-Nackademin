@@ -20,8 +20,9 @@ export const Logo = styled(A)`
 `;
 
 export const LinkWrapper = styled(FlexRowCenter)`
-  @media (max-width: 1023px) {
-    display: none;
+  display: none;
+  @media (min-width: 1023px) {
+    display: flex;
   }
 `;
 
@@ -36,6 +37,8 @@ export const NavLink = styled(A)`
 export const LoginBtn = styled(OrangeButton)`
   width: 200px;
   text-decoration: underline;
+  height: 45px;
+  font-size: 1rem;
   @media (max-width: 1023px) {
     display: none;
   }
