@@ -23,9 +23,7 @@ const Navbar = () => {
           </Link>
         ))}
       </LinkWrapper>
-      {/* <Link href="/login" passHref> */}
       <LoginBtn href="/login">Sign In</LoginBtn>
-      {/* </Link> */}
     </NavContainer>
   );
 };

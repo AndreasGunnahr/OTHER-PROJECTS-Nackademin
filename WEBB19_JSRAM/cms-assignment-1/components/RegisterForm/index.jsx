@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import GlobalContext from "store/globalContext";
+
 import {
   RegisterFormContainer,
   RegisterFormWrapper,
@@ -10,8 +13,11 @@ import {
 } from "./style";
 
 import data from "./data";
+import Link from "next/link";
 
 const RegisterForm = () => {
+  const { state, dispatch } = useContext(GlobalContext);
+  console.log(state);
   return (
     <RegisterFormContainer>
       {data.map((customerItem, index) => (
@@ -27,7 +33,9 @@ const RegisterForm = () => {
       ))}
       <RegisterFormLoginAccount>
         Have a account?
-        <RegisterFormLink href="/login">Sign in</RegisterFormLink>
+        <Link href="/login" passHref>
+          <RegisterFormLink>Sign in</RegisterFormLink>
+        </Link>
       </RegisterFormLoginAccount>
       <RegisterFormSubmitBtn>Create account</RegisterFormSubmitBtn>
     </RegisterFormContainer>

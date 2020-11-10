@@ -25,7 +25,6 @@ export const LoginFormLabel = styled(Label)``;
 export const LoginFormGetAccount = styled(P)`
   font-size: 0.85rem;
   font-weight: 600;
-  margin-top: 1rem;
   text-align: right;
 `;
 
@@ -36,6 +35,20 @@ export const LoginFormLink = styled(A)`
   margin-left: 2px;
 `;
 
+export const LoginBottomWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  /* justify-content: space-between; */
+`;
+
 export const LoginFormSubmitBtn = styled(OrangeButton)`
+  margin-top: 1rem;
+`;
+
+export const LoginError = styled(LoginFormGetAccount)`
+  color: red;
   margin-top: 2rem;
+  text-align: left;
+  height: 25px;
 `;

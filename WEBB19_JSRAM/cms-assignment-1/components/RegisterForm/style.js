@@ -3,10 +3,12 @@ import { Label, Input, P, A, textFont } from "components/Shared";
 import { OrangeButton } from "components/Button";
 
 export const RegisterFormContainer = styled.div`
-  height: 700px;
-  width: 700px;
+  height: 100%;
+  width: 100%;
+  max-width: 700px;
   border-radius: 10px;
   padding: 1rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 `;

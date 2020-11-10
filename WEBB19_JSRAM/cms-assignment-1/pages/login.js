@@ -3,7 +3,7 @@ import LoginForm from "components/LoginForm";
 
 export default function Login() {
   return (
-    <PrimaryLayout>
+    <PrimaryLayout placement={"center"}>
       <LoginForm />
     </PrimaryLayout>
   );

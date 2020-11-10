@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { H1, P, A } from "components/Shared";
+import { H1, P } from "components/Shared";
 import { OrangeButton } from "components/Button";
 
 export const HeroSection = styled.div`
@@ -48,10 +48,11 @@ export const HeroActionBtn = styled(OrangeButton)`
 
 export const HeroTitle = styled(H1)``;
 
-export const NextSectionBtn = styled(A)`
+export const NextSectionBtn = styled(P)`
   text-transform: uppercase;
   font-size: 14px;
   position: absolute;
+  cursor: pointer;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);

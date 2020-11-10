@@ -1,35 +1,27 @@
 const data = [
   {
-    name: "Name",
-    type: "name",
+    name: "First name",
+    type: "firstName	",
   },
   {
-    name: "Organisation number",
-    type: "organisationNr",
-  },
-  {
-    name: "VAT number",
-    type: "vatNr",
-  },
-  {
-    name: "Reference",
-    type: "reference",
-  },
-  {
-    name: "Payment terms",
-    type: "paymentTerm",
-  },
-  {
-    name: "Website",
-    type: "website",
+    name: "Last name",
+    type: "lastName",
   },
   {
     name: "Email",
     type: "email",
   },
   {
-    name: "Phone",
-    type: "phoneNumber",
+    name: "Password",
+    type: "password",
+  },
+  {
+    name: "Organisation name",
+    type: "organisationName",
+  },
+  {
+    name: "Type of organisation",
+    type: "organisationKind",
   },
 ];
 

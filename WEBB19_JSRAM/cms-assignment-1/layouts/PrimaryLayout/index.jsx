@@ -3,14 +3,14 @@ import Head from "next/head";
 import Navbar from "components/Navbar";
 import { MainWrapper, ChildrenWrapper } from "./style";
 
-const PrimaryLayout = ({ children }) => {
+const PrimaryLayout = ({ children, placement }) => {
   return (
     <MainWrapper>
       <Head>
         <title>Magic CMS ⭐ </title>
       </Head>
       <Navbar />
-      <ChildrenWrapper>{children}</ChildrenWrapper>
+      <ChildrenWrapper placement={placement}>{children}</ChildrenWrapper>
     </MainWrapper>
   );
 };

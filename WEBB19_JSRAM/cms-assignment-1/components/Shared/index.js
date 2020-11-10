@@ -32,6 +32,7 @@ export const H1 = styled.h1`
   color: ${theme.color.black};
   text-transform: uppercase;
   font-size: 2rem;
+  letter-spacing: 1px;
   @media (min-width: 1024px) {
     font-size: 3rem;
   }
