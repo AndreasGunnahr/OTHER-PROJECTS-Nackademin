@@ -30,10 +30,6 @@ const GlobalReducer = (state, action) => {
       return { ...state, customers: [...state.customers, action.customer] };
 
     case "DELETE_CUSTOMER":
-      console.log(action.customerId);
-      console.log(
-        state.customers.filter((customer) => customer.id !== action.customerId)
-      );
       return {
         ...state,
         customers: state.customers.filter(
@@ -48,8 +44,6 @@ const GlobalReducer = (state, action) => {
 
       const copy = [...state.customers];
       copy[index] = action.editCustomer;
-
-      console.log(copy);
 
       return {
         ...state,

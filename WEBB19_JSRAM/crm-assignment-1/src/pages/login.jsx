@@ -17,7 +17,7 @@ const Login = () => {
       };
 
       const { response } = await activateUser(payload);
-      console.log(response.detail.includes("Stale"));
+
       if (response.detail.includes("Stale")) {
         setActivation("Account already activated");
         return history.push("/login");
