@@ -5,6 +5,24 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@Andreas Gunnahr`,
+    menuLinks: [
+      {
+        link: "/",
+        name: "Home",
+      },
+      {
+        link: "/about",
+        name: "About",
+      },
+      {
+        link: "/projects",
+        name: "Projects",
+      },
+      {
+        link: "/contact",
+        name: "Contact",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -33,7 +51,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-root-import",
       options: {
-        root: path.join(__dirname, "src"),
+        src: path.join(__dirname, "src"),
+        pages: path.join(__dirname, "src/pages"),
+        components: path.join(__dirname, "src/components"),
+        layouts: path.join(__dirname, "src/layouts"),
+        constants: path.join(__dirname, "src/constants"),
       },
     },
     {
