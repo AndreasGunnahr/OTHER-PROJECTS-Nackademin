@@ -1,5 +1,6 @@
 import { removeSessions, setSessions } from "utilities/authServices";
 
+
 const GlobalReducer = (state, action) => {
   switch (action.type) {
     case "SIGN_IN":

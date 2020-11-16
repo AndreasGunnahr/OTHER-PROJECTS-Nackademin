@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { onRegister } from "utilities/userServices";
+import data from "./data";
 
 import {
   RegisterFormContainer,
@@ -15,9 +17,6 @@ import {
   RequiredStar,
   SuccessfulRegister,
 } from "./style";
-
-import { onRegister } from "utilities/userServices";
-import data from "./data";
 
 const RegisterForm = () => {
   const [registerSuccess, setRegisterSuccess] = useState(null);

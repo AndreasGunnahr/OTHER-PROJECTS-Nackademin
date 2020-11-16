@@ -1,4 +1,6 @@
-import React from "react";
+import data from "../CustomerModal/data";
+import { onDelete } from "utilities/userServices";
+import { useHistory } from "react-router-dom";
 
 import {
   DetailContainer,
@@ -12,10 +14,6 @@ import {
   DeleteBtn,
   EditBtn,
 } from "./style";
-
-import data from "../CustomerModal/data";
-import { onDelete } from "utilities/userServices";
-import { useHistory } from "react-router-dom";
 
 const CustomerDetailInfo = ({ customers, customerId, dispatch, toggle }) => {
   const history = useHistory();

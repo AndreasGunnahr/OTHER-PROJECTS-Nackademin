@@ -1,3 +1,5 @@
+import CustomerListItem from "components/CustomerListItem";
+import { useGlobalContext } from "store/globalContext";
 import {
   CustomerListContainer,
   CustomerListTitle,
@@ -5,9 +7,6 @@ import {
   CustomerTopWrapper,
   AddCustomerBtn,
 } from "./style";
-
-import CustomerListItem from "components/CustomerListItem";
-import { useGlobalContext } from "store/globalContext";
 
 const CustomerList = ({ toggle }) => {
   const { customers } = useGlobalContext();

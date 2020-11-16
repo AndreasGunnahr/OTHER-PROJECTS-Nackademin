@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useGlobalContext } from "store/globalContext";
+import { getActiveUser, onLogin } from "utilities/userServices";
 import { useHistory } from "react-router-dom";
 
 import {
@@ -15,8 +16,6 @@ import {
   LoginTitle,
   SuccessfulActivation,
 } from "./style";
-
-import { getActiveUser, onLogin } from "utilities/userServices";
 
 const LoginForm = ({ activation }) => {
   const history = useHistory();

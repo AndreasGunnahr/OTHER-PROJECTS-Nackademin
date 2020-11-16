@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useGlobalContext } from "store/globalContext";
 import linkData from "./LinkData";
-import Hamburger from "components/Hamburger";
-import Sidebar from "components/Sidebar";
+
 import {
   NavContainer,
   Logo,
@@ -12,7 +12,9 @@ import {
   SignedInUser,
   Wrapper,
 } from "./style";
-import { useGlobalContext } from "store/globalContext";
+
+import Hamburger from "components/Hamburger";
+import Sidebar from "components/Sidebar";
 
 const Navbar = () => {
   const { user, isAuthenticated, dispatch } = useGlobalContext();

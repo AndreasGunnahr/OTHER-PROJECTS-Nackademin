@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import data from "./data";
+
 import { createPortal } from "react-dom";
 import {
   Overlay,
@@ -13,8 +15,6 @@ import {
   CustomerLabel,
   InputWrapper,
 } from "./style";
-
-import data from "./data";
 
 const CustomerModal = ({
   isShowing,
