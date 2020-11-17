@@ -1,11 +1,14 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE } from "redux/types";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_USER } from "redux/types";
 import { userService } from "services/user.service";
+// import { useHistory } from "react-router-dom";
 
-export function login(user) {
+export const login = (user) => {
   return (dispatch) => {
     userService.login(user).then(
-      (token) => {
-        dispatch(success(user.token));
+      (response) => {
+        console.log(response.token);
+        dispatch(success(response.token));
+        // history.push("/dashboard")
       },
       (error) => {
         dispatch(failure(error));
@@ -19,4 +22,10 @@ export function login(user) {
   function failure(error) {
     return { type: LOGIN_FAILURE, error };
   }
-}
+};
+
+export const logout = () => {
+  return (dispatch) => {
+    dispatch({ type: LOGOUT_USER });
+  };
+};

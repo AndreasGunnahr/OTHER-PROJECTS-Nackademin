@@ -1,30 +1,35 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE } from "redux/types";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_USER } from "redux/types";
 
 const initialState = {
   loading: false,
-  authenticated: false,
+  isAuthenticated: false,
   token: null,
   user: null,
   error: null,
 };
 
 export default function authentication(state = initialState, action) {
-  console.log(state);
   switch (action.type) {
     case LOGIN_SUCCESS:
-      console.log(action);
-      console.log(state);
       return {
         ...state,
-        authenticated: true,
+        isAuthenticated: true,
         token: action.token,
+        error: null,
       };
     case LOGIN_FAILURE:
-      console.log(action);
       return {
         ...state,
         error: action.error,
       };
+
+    case LOGOUT_USER:
+      return {
+        ...state,
+        isAuthenticated: false,
+        token: null,
+      };
+
     default:
       return state;
   }

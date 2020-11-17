@@ -8,7 +8,7 @@ import Reducer from "redux/reducers";
 const persistConfig = {
   key: "primary",
   storage,
-  whitelist: ["authentication"],
+  whitelist: [],
   // Fundera på vart error och loading ska ligga
 };
 
