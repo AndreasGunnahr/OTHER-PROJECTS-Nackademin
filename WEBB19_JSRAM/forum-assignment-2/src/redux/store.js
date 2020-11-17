@@ -9,6 +9,7 @@ const persistConfig = {
   key: "primary",
   storage,
   whitelist: ["authentication"],
+  // Fundera på vart error och loading ska ligga
 };
 
 const persistedReducer = persistReducer(persistConfig, Reducer);

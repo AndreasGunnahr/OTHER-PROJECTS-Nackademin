@@ -1,23 +1,14 @@
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "redux/actions/user.action";
+import { GlobalStyle } from "constants/globalStyle";
+import { ThemeProvider } from "styled-components";
+import { theme } from "constants/theme";
+import Routes from "routes";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
-
   return (
-    <div className="App">
-      <h1>{counter}</h1>
-      <button
-        onClick={() =>
-          dispatch(
-            login({ email: "pelle@willandskill.se", password: "pellesvanslos" })
-          )
-        }
-      >
-        -
-      </button>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Routes />
+    </ThemeProvider>
   );
 };
 

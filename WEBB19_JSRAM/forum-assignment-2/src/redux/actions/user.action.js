@@ -3,16 +3,15 @@ import { userService } from "services/user.service";
 
 export function login(user) {
   return (dispatch) => {
-    userService
-      .login(user)
-      .then((response) => response.json())
-      .then((user) => dispatch(success(user.token)))
-      .catch((error) => {
+    userService.login(user).then(
+      (token) => {
+        dispatch(success(user.token));
+      },
+      (error) => {
         dispatch(failure(error));
-      });
+      }
+    );
   };
-
-  // Måste kolla ifall vi har en error code i services.
 
   function success(token) {
     return { type: LOGIN_SUCCESS, token };

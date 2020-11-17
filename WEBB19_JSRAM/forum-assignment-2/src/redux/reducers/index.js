@@ -15,7 +15,7 @@ import authentication from "./authentication.reducer";
  * More info: http://rackt.org/redux/docs/api/combineReducers.html
  */
 const Reducers = combineReducers({
-  authentication, // you might be used to: counter: counter,
+  authentication,
 });
 
 export default Reducers;

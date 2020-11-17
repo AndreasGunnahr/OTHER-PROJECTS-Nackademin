@@ -20,9 +20,10 @@ export default function authentication(state = initialState, action) {
         token: action.token,
       };
     case LOGIN_FAILURE:
+      console.log(action);
       return {
-        authenticated: false,
-        token: null,
+        ...state,
+        error: action.error,
       };
     default:
       return state;
