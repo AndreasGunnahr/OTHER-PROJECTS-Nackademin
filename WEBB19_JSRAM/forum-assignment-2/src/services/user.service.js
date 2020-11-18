@@ -1,5 +1,6 @@
 const BASE_URL = "https://lab.willandskill.eu";
 const LOGIN_URL = `${BASE_URL}/api/v1/auth/api-token-auth/`;
+const POSTS_URL = `${BASE_URL}/api/v1/forum/posts/`;
 
 const login = async (user) => {
   return fetch(LOGIN_URL, requestOptions("POST", null, user))
@@ -9,9 +10,15 @@ const login = async (user) => {
     });
 };
 
-const logout = () => {};
-
 const register = () => {};
+
+const getAll = () => {
+  return fetch(POSTS_URL, requestOptions("GET", null, null))
+    .then(handleResponse)
+    .then((data) => {
+      return data.results;
+    });
+};
 
 const requestOptions = (method, token, payload) => {
   const body = JSON.stringify(payload);
@@ -27,18 +34,13 @@ const requestOptions = (method, token, payload) => {
 };
 
 function handleResponse(response) {
+  console.log(response);
   return response.text().then((text) => {
+    console.log(text);
     const data = text && JSON.parse(text);
     if (!response.ok) {
-      //   if (response.status === 401) {
-      //     // auto logout if 401 response returned from api
-      //     logout();
-      //     // location.reload(true);
-
-      //   }
-
       const error = (data && data.message) || response.statusText;
-      return Promise.reject(error);
+      return Promise.reject({ message: error, code: response.status });
     }
 
     return data;
@@ -47,6 +49,6 @@ function handleResponse(response) {
 
 export const userService = {
   login,
-  logout,
   register,
+  getAll,
 };

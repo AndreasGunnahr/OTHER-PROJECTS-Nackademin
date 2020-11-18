@@ -1,24 +1,8 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { login } from "redux/actions/user.action";
+import PrimaryLayout from "layouts/PrimaryLayout";
 
 const Login = () => {
-  const dispatch = useDispatch();
-
-  return (
-    <div>
-      Login Page
-      <button
-        onClick={() =>
-          dispatch(
-            login({ email: "pelle@willandskill.se", password: "pellesvanslos" })
-          )
-        }
-      >
-        Login
-      </button>
-    </div>
-  );
+  return <PrimaryLayout></PrimaryLayout>;
 };
 
 export default Login;

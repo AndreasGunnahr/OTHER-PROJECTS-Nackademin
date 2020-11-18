@@ -1,15 +1,20 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { logout } from "redux/actions/user.action";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import PrimaryLayout from "layouts/PrimaryLayout";
+import PostList from "components/PostList";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
 
+  // useEffect(() => {
+  //   dispatch()
+
+  // }, [])
+
   return (
-    <div>
-      Dashboard page
-      <button onClick={() => dispatch(logout())}>Logout</button>
-    </div>
+    <PrimaryLayout>
+      <PostList />
+    </PrimaryLayout>
   );
 };
 

@@ -8,8 +8,7 @@ import Reducer from "redux/reducers";
 const persistConfig = {
   key: "primary",
   storage,
-  whitelist: [],
-  // Fundera på vart error och loading ska ligga
+  whitelist: ["authentication"],
 };
 
 const persistedReducer = persistReducer(persistConfig, Reducer);
@@ -19,6 +18,7 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(thunk))
 );
 
+console.log(store.getState());
 const persistor = persistStore(store);
 
 export { store, persistor };
