@@ -1,4 +1,6 @@
 import React from "react";
+import moment from "moment";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentAlt } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -9,41 +11,41 @@ import {
   PostListDescription,
   PostListBottomContainer,
   PostListAuthor,
+  PostListAuthorWrapper,
   PostListCreated,
   PostListComments,
 } from "./style";
 
-const PostList = () => {
+const PostList = ({ posts }) => {
+  console.log(posts);
   return (
     <PostListContainer>
       <PostListWrapper>
-        <PostListItem>
-          <PostListTitle>What does the fox say?</PostListTitle>
-          <PostListDescription>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, qui
-            sint perferendis eveniet excepturi adipisci laborum facere nostrum
-            quidem dolore totam iure rem, ipsam placeat, magni nihil delectus
-            odit accusantium.
-          </PostListDescription>
-          <PostListBottomContainer>
-            <PostListAuthor>Posted by Joe Dohn</PostListAuthor>
-            <PostListCreated>12hr ago</PostListCreated>
-            <PostListComments>
-              <FontAwesomeIcon icon={faCommentAlt} /> 50+
-            </PostListComments>
-          </PostListBottomContainer>
-        </PostListItem>
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
-        <PostListItem />
+        {posts.map((post, index) => (
+          <PostListItem key={index}>
+            <PostListTitle>{post.title}</PostListTitle>
+            <PostListDescription>
+              {post.content.slice(0, 250)}...
+            </PostListDescription>
+            <PostListBottomContainer>
+              <PostListAuthor>
+                Posted by
+                <PostListAuthorWrapper>
+                  {post.author && post.author.email
+                    ? post.author.email
+                    : "Anonym"}
+                </PostListAuthorWrapper>
+              </PostListAuthor>
+              <PostListCreated>
+                {moment(post.createdAt).fromNow()}
+              </PostListCreated>
+              <PostListComments>
+                <FontAwesomeIcon icon={faCommentAlt} /> {post.countResponses}{" "}
+                comment
+              </PostListComments>
+            </PostListBottomContainer>
+          </PostListItem>
+        ))}
       </PostListWrapper>
     </PostListContainer>
   );

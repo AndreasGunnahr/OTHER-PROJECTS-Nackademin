@@ -5,12 +5,12 @@ export const MainWrapper = styled.section`
 `;
 
 export const ChildrenWrapper = styled.div`
-  padding: 0 2rem;
-
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 200px minmax(300px, 1fr) 400px 200px;
+  grid-gap: 50px;
   min-height: calc(100vh - 58px);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+
   @media (min-width: 1024px) {
     min-height: calc(100vh - 80px);
   }

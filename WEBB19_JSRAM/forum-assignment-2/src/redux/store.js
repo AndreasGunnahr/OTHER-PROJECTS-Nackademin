@@ -18,7 +18,6 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(thunk))
 );
 
-console.log(store.getState());
 const persistor = persistStore(store);
 
 export { store, persistor };

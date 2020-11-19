@@ -1,49 +1,24 @@
-import { useEffect } from "react";
+import React from "react";
 import {
   SidebarContainer,
-  SidebarWrapper,
-  SidebarMenu,
-  SidebarLink,
-  SidebarBtnWrapper,
-  // SidebarBtn,
-  // LogOutBtn,
+  SidebarActionBtn,
+  TopUserContainer,
+  TopUserTitle,
 } from "./style";
 
-import linkData from "components/Navbar/LinkData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = ({ isOpen }) => {
-  useEffect(() => {
-    isOpen
-      ? (document.getElementsByTagName("body")[0].style.overflowY = "hidden")
-      : (document.getElementsByTagName("body")[0].style.overflowY = "scroll");
-  }, [isOpen]);
-
+const Sidebar = () => {
   return (
-    <SidebarContainer isOpen={isOpen}>
-      <SidebarWrapper>
-        <SidebarMenu>
-          {linkData.map(({ to, name }, key) => (
-            <SidebarLink
-              key={key}
-              to={to}
-              activeStyle={{
-                borderBottom: "3px solid #FF7235",
-              }}
-            >
-              {name}
-            </SidebarLink>
-          ))}
-        </SidebarMenu>
-        <SidebarBtnWrapper>
-          {/* {isAuthenticated ? (
-            <LogOutBtn onClick={() => dispatch({ type: "SIGN_OUT" })}>
-              Logout
-            </LogOutBtn>
-          ) : (
-            <SidebarBtn to="/login">Sign In</SidebarBtn>
-          )} */}
-        </SidebarBtnWrapper>
-      </SidebarWrapper>
+    <SidebarContainer>
+      <SidebarActionBtn>
+        <FontAwesomeIcon icon={faPlus} />
+        Create a new post
+      </SidebarActionBtn>
+      <TopUserContainer>
+        <TopUserTitle>Top user</TopUserTitle>
+      </TopUserContainer>
     </SidebarContainer>
   );
 };
