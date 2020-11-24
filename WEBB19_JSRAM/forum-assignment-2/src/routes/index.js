@@ -3,46 +3,33 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 // IMPORT OF PAGES
-import Landing from "pages/landing";
 import Login from "pages/login";
 import Register from "pages/register";
-import Dashboard from "pages/dashboard";
+import Posts from "pages/posts";
 import PostDetail from "pages/postDetail";
+import Home from "pages/home";
 
 const AuthRoute = ({ type, component, ...options }) => {
   const isAuthenticated = useSelector(
     (state) => state.authentication.isAuthenticated
   );
 
-  console.log(isAuthenticated);
-  if (type === "public" && isAuthenticated) return <Redirect to="/dashboard" />;
+  if (type === "public" && isAuthenticated) return <Redirect to="/home" />;
   else if (type === "private" && !isAuthenticated)
     return <Redirect to="/login" />;
 
-  return <Route {...options} component={component} />; // console.log("Auth: ", isAuthenticated);
-
-  // if (!isAuthenticated) return <Route {...options} component={component} />;
-  // return <Redirect to="/dashboard" />;
+  return <Route {...options} component={component} />;
 };
-
-// const PrivateRoute = ({ component, ...options }) => {
-//   const isAuthenticated = useSelector(
-//     (state) => state.authentication.isAuthenticated
-//   );
-//   console.log("Auth: ", isAuthenticated);
-
-//   if (isAuthenticated) return <Route {...options} component={component} />;
-//   return <Redirect to="/login" />;
-// };
 
 const Router = () => {
   return (
     <Switch>
-      <AuthRoute exact path="/" component={Landing} type="public" />
+      <AuthRoute exact path="/" component={Login} type="public" />
       <AuthRoute exact path="/login" component={Login} type="public" />
       <AuthRoute exact path="/register" component={Register} type="public" />
-      <AuthRoute exact path="/dashboard" component={Dashboard} type="private" />
+      <AuthRoute exact path="/posts" component={Posts} type="private" />
       <AuthRoute exact path="/post/:id" component={PostDetail} type="private" />
+      <AuthRoute exact path="/home" component={Home} type="private" />
     </Switch>
   );
 };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Input, A, FlexRowCenter } from "components/Shared";
-// import { OrangeLinkButton, OrangeButton } from "components/Button";
+import { Input, NavA, A, FlexRowCenter } from "components/Shared";
+import { Button } from "components/Button";
 
 export const NavContainer = styled.nav`
   height: 80px;
@@ -30,6 +30,15 @@ export const SearchField = styled(Input)`
   font-family: "Raleway", FontAwesome, sans-serif;
 `;
 
+export const NavLink = styled(NavA)`
+  margin-right: 1.5rem;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  &:last-child {
+    margin: 0;
+  }
+`;
+
 export const LoginBtn = styled.button`
   width: 200px;
   height: 45px;
@@ -40,13 +49,11 @@ export const LoginBtn = styled.button`
   /* display: none; */
 `;
 
-export const LogOutBtn = styled.button`
+export const LogOutBtn = styled(Button)`
   width: 200px;
   height: 45px;
   font-size: 1rem;
-  background: ${({ theme }) => theme.color.white};
-  border: none;
-  cursor: pointer;
+  margin-left: 2rem;
 `;
 
 export const Wrapper = styled(FlexRowCenter)`

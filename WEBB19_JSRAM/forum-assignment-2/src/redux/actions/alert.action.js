@@ -1,6 +1,7 @@
 import { ALERT_SUCCESS, ALERT_ERROR, ALERT_CLEAR } from "../types";
 
-const success = ({ message, code }) => {
+const success = (message, code) => {
+ 
   return { type: ALERT_SUCCESS, message, code };
 };
 

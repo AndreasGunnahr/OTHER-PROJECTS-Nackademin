@@ -8,7 +8,7 @@ import Reducer from "redux/reducers";
 const persistConfig = {
   key: "primary",
   storage,
-  whitelist: ["authentication"],
+  whitelist: ["authentication", "posts", "categories", "countries"],
 };
 
 const persistedReducer = persistReducer(persistConfig, Reducer);

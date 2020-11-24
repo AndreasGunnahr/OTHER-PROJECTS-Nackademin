@@ -6,6 +6,7 @@ import {
   Logo,
   SearchWrapper,
   SearchField,
+  NavLink,
   LoginBtn,
   LogOutBtn,
   Wrapper,
@@ -24,38 +25,54 @@ const Navbar = () => {
 
   return (
     <NavContainer>
-      <Logo to="/" open={isOpen}>
+      <Logo to={isAuthenticated ? "/home" : "/login"} open={isOpen}>
         Logo
       </Logo>
 
       {/* <Sidebar isOpen={isOpen} /> */}
       {/* <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} /> */}
-
-      {isAuthenticated && (
-        <SearchWrapper>
-          <SearchField placeholder="&#xF002;  Search for posts" />
-        </SearchWrapper>
-      )}
       {isAuthenticated && (
         <Wrapper>
+          <NavLink
+            to="/home"
+            activeStyle={{
+              borderBottom: "3px solid #0066FF",
+            }}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/posts"
+            activeStyle={{
+              borderBottom: "3px solid #0066FF",
+            }}
+          >
+            Posts
+          </NavLink>
           <LogOutBtn onClick={() => dispatch(userActions.logout())}>
             Logout
           </LogOutBtn>
         </Wrapper>
       )}
       {!isAuthenticated && (
-        <LoginBtn
-          onClick={() =>
-            dispatch(
-              userActions.login({
-                email: "pelle@willandskill.se",
-                password: "pellesvanslos",
-              })
-            )
-          }
-        >
-          Login
-        </LoginBtn>
+        <Wrapper>
+          <NavLink
+            to="/register"
+            activeStyle={{
+              borderBottom: "3px solid #0066FF",
+            }}
+          >
+            Register
+          </NavLink>
+          <NavLink
+            to="/login"
+            activeStyle={{
+              borderBottom: "3px solid #0066FF",
+            }}
+          >
+            Login
+          </NavLink>
+        </Wrapper>
       )}
     </NavContainer>
   );

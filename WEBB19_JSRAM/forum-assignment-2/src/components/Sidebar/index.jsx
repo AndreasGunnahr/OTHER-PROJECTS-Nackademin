@@ -2,23 +2,52 @@ import React from "react";
 import {
   SidebarContainer,
   SidebarActionBtn,
-  TopUserContainer,
-  TopUserTitle,
+  UserContainer,
+  UserTitle,
+  UserTag,
+  UserLabel,
 } from "./style";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
 
-const Sidebar = () => {
+const Sidebar = ({ section, show }) => {
+  const user = useSelector((state) => state.authentication.user);
+  console.log(user);
+
   return (
     <SidebarContainer>
-      <SidebarActionBtn>
-        <FontAwesomeIcon icon={faPlus} />
-        Create a new post
-      </SidebarActionBtn>
-      <TopUserContainer>
-        <TopUserTitle>Top user</TopUserTitle>
-      </TopUserContainer>
+      {section === "posts" && (
+        <>
+          <SidebarActionBtn onClick={() => show()}>
+            <FontAwesomeIcon icon={faPlus} />
+            Create a new post
+          </SidebarActionBtn>
+        </>
+      )}
+
+      <UserContainer>
+        <UserTitle>Signed in user</UserTitle>
+        {user && (
+          <>
+            <UserLabel>
+              Firstname:
+              <UserTag>
+                {user.firstName ? user.firstName : "Not entered"}
+              </UserTag>
+            </UserLabel>
+            <UserLabel>
+              Lastname:
+              <UserTag>{user.lastName ? user.lastName : "Not entered"}</UserTag>
+            </UserLabel>
+            <UserLabel>
+              Email:
+              <UserTag>{user.email ? user.email : "Not entered"}</UserTag>
+            </UserLabel>
+          </>
+        )}
+      </UserContainer>
     </SidebarContainer>
   );
 };

@@ -1,4 +1,9 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_USER } from "redux/types";
+import {
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOGOUT_USER,
+  ME_SUCCESS,
+} from "redux/types";
 
 const initialState = {
   isAuthenticated: false,
@@ -24,6 +29,14 @@ export default function authentication(state = initialState, action) {
         ...state,
         isAuthenticated: false,
         token: null,
+        user: null,
+      };
+
+    case ME_SUCCESS:
+    
+      return {
+        ...state,
+        user: action.user,
       };
 
     default:

@@ -3,11 +3,11 @@ import React from "react";
 import Navbar from "components/Navbar";
 import { MainWrapper, ChildrenWrapper } from "./style";
 
-const PrimaryLayout = ({ children }) => {
+const PrimaryLayout = ({ children, col }) => {
   return (
     <MainWrapper>
       <Navbar />
-      <ChildrenWrapper>{children}</ChildrenWrapper>
+      <ChildrenWrapper col={col}>{children}</ChildrenWrapper>
     </MainWrapper>
   );
 };

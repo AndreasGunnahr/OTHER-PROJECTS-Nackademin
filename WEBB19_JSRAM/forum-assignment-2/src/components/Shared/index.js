@@ -13,11 +13,11 @@ export const textFont = css`
 export const Input = styled.input`
   ${textFont};
   color: ${theme.color.black};
-  height: 50px;
+  height: 55px;
   padding-left: 10px;
   border-radius: 5px;
   border: none;
-  font-size: 0.85rem;
+  font-size: 1rem;
   outline: 0;
 `;
 

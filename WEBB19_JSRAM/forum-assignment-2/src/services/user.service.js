@@ -1,7 +1,8 @@
 const LOGIN_URL = `https://lab.willandskill.eu/api/v1/auth/api-token-auth/`;
-const POSTS_URL = `https://lab.willandskill.eu/api/v1/forum/posts/`;
+const REGISTER_URL = `https://lab.willandskill.eu/api/v1/auth/users/`;
+const ME_URL = `https://lab.willandskill.eu/api/v1/me/`;
 
-const login = async (user) => {
+const login = (user) => {
   return fetch(LOGIN_URL, requestOptions("POST", null, user))
     .then(handleResponse)
     .then((token) => {
@@ -9,13 +10,19 @@ const login = async (user) => {
     });
 };
 
-const register = () => {};
-
-const getAllPosts = (token) => {
-  return fetch(POSTS_URL, requestOptions("GET", token))
+const register = (user) => {
+  return fetch(REGISTER_URL, requestOptions("POST", null, user))
     .then(handleResponse)
-    .then((data) => {
-      return data.results;
+    .then((user) => {
+      return user;
+    });
+};
+
+const getMe = (token) => {
+  return fetch(ME_URL, requestOptions("GET", token))
+    .then(handleResponse)
+    .then((user) => {
+      return user;
     });
 };
 
@@ -35,8 +42,13 @@ const requestOptions = (method, token, payload) => {
 function handleResponse(response) {
   return response.text().then((text) => {
     const data = text && JSON.parse(text);
+
     if (!response.ok) {
-      const error = (data && data.message) || response.statusText;
+      const error =
+        (data?.nonFieldErrors[0] &&
+          "Unable to log in with provided credentials.") ||
+        response.statusText;
+
       return Promise.reject({ message: error, code: response.status });
     }
 
@@ -47,5 +59,5 @@ function handleResponse(response) {
 export const userService = {
   login,
   register,
-  getAllPosts,
+  getMe,
 };
