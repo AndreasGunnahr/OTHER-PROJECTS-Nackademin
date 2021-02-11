@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <NavContainer>
       <Logo to="/" open={isOpen}>
-        Logo
+        CRM
       </Logo>
 
       <Sidebar isOpen={isOpen} />

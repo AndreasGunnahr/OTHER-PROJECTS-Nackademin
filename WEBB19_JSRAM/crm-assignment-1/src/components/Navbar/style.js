@@ -36,35 +36,35 @@ export const NavLink = styled(NavA)`
   }
 `;
 
-// export const LoginBtn = styled(OrangeLinkButton)`
-//   width: 200px;
-//   text-decoration: underline;
-//   height: 45px;
-//   font-size: 1rem;
-//   display: none;
-//   @media (min-width: 1023px) {
-//     display: flex;
-//   }
-// `;
+export const LoginBtn = styled(OrangeLinkButton)`
+  width: 200px;
+  text-decoration: underline;
+  height: 45px;
+  font-size: 1rem;
+  display: none;
+  @media (min-width: 1023px) {
+    display: flex;
+  }
+`;
 
-// export const LogOutBtn = styled(OrangeButton)`
-//   width: 200px;
-//   text-decoration: underline;
-//   height: 45px;
-//   font-size: 1rem;
-// `;
+export const LogOutBtn = styled(OrangeButton)`
+  width: 200px;
+  text-decoration: underline;
+  height: 45px;
+  font-size: 1rem;
+`;
 
-// export const SignedInUser = styled(P)`
-//   font-size: 0.85rem;
-//   margin-right: 2rem;
-//   line-height: 1.5rem;
-//   font-weight: 600;
-//   letter-spacing: 0.5px;
-// `;
+export const SignedInUser = styled(P)`
+  font-size: 0.85rem;
+  margin-right: 2rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+`;
 
-// export const Wrapper = styled(FlexRowCenter)`
-//   display: none;
-//   @media (min-width: 1023px) {
-//     display: flex;
-//   }
-// `;
+export const Wrapper = styled(FlexRowCenter)`
+  display: none;
+  @media (min-width: 1023px) {
+    display: flex;
+  }
+`;
