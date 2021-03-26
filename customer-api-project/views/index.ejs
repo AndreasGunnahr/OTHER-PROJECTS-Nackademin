@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id = "edit-container" class = "edit-container">
+      <input class = "edit-customer type = "text" name = "first_name" placeholder = "First name">
+      <input class = "edit-customer type = "text" name = "last_name" placeholder = "Last name">
+      <input class = "edit-customer type = "text" name = "email" placeholder = "Email">
+      <input class = "edit-customer type = "text" name = "gender" placeholder = "Gender">
+      <input class = "edit-customer type = "text" name = "country" placeholder = "Country">
+      <input class = "edit-customer type = "text" name = "city" placeholder = "City">
+      <div class = "bottom-container">
+          <input type = "button" id = "close" value = "Close">
+          <input type = "button" id = "edit" value = "Confirm changes">
+      </div>
+    </div>
+    <div class = "container">
+      <div id = "search-container" class = "search-container">
+          <h1>Search for a customer</h1>
+          <input id = "search" name = "seachbar" placeholder = "Search for customer">
+          <!-- <input id = "search-btn" type = "button" value = "Search"> -->
+      </div>
+      <h1>Add customer</h1>
+      <form method = "POST">
+        <input class = "add-customer" type = "text" name = "first_name" placeholder = "First name">
+        <input class = "add-customer" type = "text" name = "last_name" placeholder = "Last name">
+        <input class = "add-customer" type = "text" name = "email" placeholder = "Email">
+        <input class = "add-customer" type = "text" name = "gender" placeholder = "Gender">
+        <input class = "add-customer" type = "text" name = "country" placeholder = "Country">
+        <input class = "add-customer" type = "text" name = "city" placeholder = "City">
+        <input class = "add-customer" type = "submit" id = "submit" value = "Add customer">
+      </form>
+      <table>
+          <th>ID</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Country</th>
+          <th>City</th>
+          
+        <% for(var i=0; i < customers.length; i++) { %>
+          <tr class = "table-row" id = <%= customers[i].id %>>
+            <td><%= customers[i].id %></td>
+            <td><%= customers[i].first_name %></td>
+            <td><%= customers[i].last_name %></td>
+            <td><%= customers[i].email %></td>
+            <td><%= customers[i].gender %></td>
+            <td><%= customers[i].country %></td>
+            <td><%= customers[i].city %></td>
+            <td><button key = <%= customers[i].id %> class = "edit">Edit</button></td>
+            <td><button key = <%= customers[i].id %> class = "delete">Delete</button></td>
+          </tr>
+        <% } %>
+      </table>
+    </div>
+
+
+
+
+    <script src = "/javascripts/create.js"></script>
+    <script src = "/javascripts/delete.js"></script>
+    <script src = "/javascripts/edit.js"></script>
+    <script src = "/javascripts/search.js"></script>
+  </body>
+</html>
